@@ -7,9 +7,12 @@ then
 fi
 echo "quel port souhaitez vous configurez pour le service ssh?"
 read -r port
-sed -i -e "s/#port 22/port $port/g"  /etc/ssh/sshd_config
-cat /etc/ssh/ssh_config
-
+sed -i -e s/"#Port 22"/"port $port"/g  /etc/ssh/sshd_config
+cat /etc/ssh/sshd_config
+echo "le service sshd va redemarrer"
+service sshd restart
+echo "statut du service sshd ==>"
+systemctl status sshd
 
 
 
