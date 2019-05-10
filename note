@@ -1,1 +1,13 @@
-port 1256
+BLOCK_TCP="1"
+BLOCK_UDP="1"
+#####KILL
+#####KILL
+#####KILL_ROUTE="/sbin/iptables -I INPUT -s $TARGET$ -j DROP"'
+TCP_MODE=atcp
+UDP_MODE=audp
+TCP_MODE=atcp
+UDP_MODE=audp
+TCP_MODE=atcp
+UDP_MODE=audp
+TCP_MODE=atcp
+UDP_MODE=audp

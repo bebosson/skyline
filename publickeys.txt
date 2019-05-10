@@ -1,0 +1,4 @@
+Attention: => Ces commandes sont a lancer de votre machine hote
+ssh-keygen -b 4096 -t rsa
+ssh-copy-id -i id_rsa.pub login@ip -p
+
