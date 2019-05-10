@@ -8,8 +8,6 @@ fi
 apt-get update && apt-get install portsentry
 #on arrete le service 
 /etc/init.d/portsentry stop
-echo "TCP_MODE="atcp"
-UDP_MODE="audp"" >> /etc/default/portsentry
 sed -i ' s/TCP_MODE="tcp"/BLOCK_TCP="atcp"/' /etc/default/portsentry
 sed -i ' s/UDP_MODE="udp"/UDP_MODE="audp"/' /etc/default/portsentry
 sed -i ' s/BLOCK_TCP="0"/BLOCK_TCP="1"/' /etc/portsentry/portsentry.conf
@@ -19,4 +17,4 @@ sed -i ' s/KILL/#KILL/' /etc/portsentry/portsentry.conf
 #sed -i '2 s/^/#/' note
 sed -i '209 s/#//'  /etc/portsentry/portsentry.conf
 #on redemarre le service
-/etc/init.d/portsentry start
+/etc/init.d/portsentry restart
